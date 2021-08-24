@@ -7,18 +7,20 @@ const useStyles = makeStyles({
     header: {
         textAlign: 'center',
     },
-    buttonContainer: {
+    button_container: {
         display: 'flex',
         justifyContent: 'left',
+        background: 'red',
     },
     button: {
         padding: '5px',
     },
-    content: {
+    banner: {
         display: 'flex',
         justifyContent: 'center',
         padding: '5px',
         background: 'black',
+        color: 'white',
     },
 });
 
@@ -26,10 +28,10 @@ const Header: FunctionComponent = () => {
     const classes = useStyles()
     return (
         <Box className={classes.header}>
-            <Box className={classes.content}>
+            <Box className={classes.banner}>
                 Test
             </Box>
-            <Box className={classes.buttonContainer}>
+            <Box className={classes.button_container}>
                 <Button className={classes.button}>
                     First
                 </Button>
