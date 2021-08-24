@@ -1,8 +1,8 @@
-import type { NextPage } from 'next'
-import { Box, Grid, Button } from '@material-ui/core'
+import type { NextPage } from 'next';
+import { Box, Grid, Button, Link } from '@material-ui/core';
+import { useState, useRef, useEffect} from 'react';
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { borders } from '@material-ui/system'
 import Header from "../Components/Header";
 
 const useStyles = makeStyles({
@@ -20,42 +20,53 @@ const useStyles = makeStyles({
     }
 });
 
-
 const Home: NextPage = () => {
     const classes = useStyles();
+
+    const handleScroll = () => {console.log('hello')}
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    })
     return (
-    <Box>
-        <Header/>
-      <Grid>
-        <Box className={classes.section}>
+        <Box>
+            <Header/>
             <Grid>
-                <Box>
-                </Box>
-                <Button className={classes.section_button}>
-                    Art
-                </Button>
+            <Box className={classes.section}>
+                <Link/>
+                <Grid>
+                    <Box>
+                    </Box>
+                    <Button className={classes.section_button}>
+                        Art
+                    </Button>
+                </Grid>
+            </Box>
+            <Box className={classes.section}>
+                <Link/>
+                <Grid>
+                    <Box>
+                    </Box>
+                    <Button className={classes.section_button}>
+                        Section 2
+                    </Button>
+                </Grid>
+            </Box>
+            <Box className={classes.section}>
+                <Link/>
+                <Grid>
+                    <Box>
+                    </Box>
+                    <Button className={classes.section_button}>
+                        Section 3
+                    </Button>
+                </Grid>
+            </Box>
             </Grid>
-        </Box>
-        <Box className={classes.section}>
-            <Grid>
-                <Box>
-                </Box>
-                <Button className={classes.section_button}>
-                    Section 2
-                </Button>
-            </Grid>
-        </Box>
-        <Box className={classes.section}>
-            <Grid>
-                <Box>
-                </Box>
-                <Button className={classes.section_button}>
-                    Section 3
-                </Button>
-            </Grid>
-        </Box>
-      </Grid>
-    </Box>
+            </Box>
     )
 }
 
