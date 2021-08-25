@@ -3,9 +3,11 @@ import { Box, Button } from "@material-ui/core";
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const headerStyles = makeStyles({
     header: {
         textAlign: 'center',
+        position: 'fixed',
+        width: '100%',
     },
     button_container: {
         display: 'flex',
@@ -25,20 +27,20 @@ const useStyles = makeStyles({
 });
 
 const Header: FunctionComponent = () => {
-    const classes = useStyles()
+    const classes = headerStyles()
     return (
         <Box className={classes.header}>
             <Box className={classes.banner}>
                 Test
             </Box>
             <Box className={classes.button_container}>
-                <Button className={classes.button}>
+                <Button href="#section-Art" className={classes.button}>
                     First
                 </Button>
-                <Button className={classes.button}>
+                <Button href="#section-2"  className={classes.button}>
                     Second
                 </Button>
-                <Button className={classes.button}>
+                <Button href="#section-3"  className={classes.button}>
                     Third
                 </Button>
             </Box>

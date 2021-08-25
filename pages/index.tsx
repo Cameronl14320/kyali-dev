@@ -4,24 +4,15 @@ import { useState, useRef, useEffect} from 'react';
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Header from "../Components/Header";
+import Section from "../Components/Section";
 
-const useStyles = makeStyles({
-    section: {
-        display: 'block',
-        background: 'black',
-        height: '80vh',
-        color: 'white',
-    },
-    section_button: {
-        color: 'white',
-        margin: '10px',
-        padding: '10px 40px 10px 40px',
-        border: '2px solid',
+const indexStyle = makeStyles({
+    root: {
     }
 });
 
 const Home: NextPage = () => {
-    const classes = useStyles();
+    const classes = indexStyle()
 
     const handleScroll = () => {console.log('hello')}
     useEffect(() => {
@@ -32,41 +23,13 @@ const Home: NextPage = () => {
         };
     })
     return (
-        <Box>
-            <Header/>
+        <Box className={classes.root}>
             <Grid>
-            <Box className={classes.section}>
-                <Link/>
-                <Grid>
-                    <Box>
-                    </Box>
-                    <Button className={classes.section_button}>
-                        Art
-                    </Button>
-                </Grid>
-            </Box>
-            <Box className={classes.section}>
-                <Link/>
-                <Grid>
-                    <Box>
-                    </Box>
-                    <Button className={classes.section_button}>
-                        Section 2
-                    </Button>
-                </Grid>
-            </Box>
-            <Box className={classes.section}>
-                <Link/>
-                <Grid>
-                    <Box>
-                    </Box>
-                    <Button className={classes.section_button}>
-                        Section 3
-                    </Button>
-                </Grid>
-            </Box>
+                <Section sectionId={"Art"}/>
+                <Section sectionId={"2"}/>
+                <Section sectionId={"3"}/>
             </Grid>
-            </Box>
+        </Box>
     )
 }
 
