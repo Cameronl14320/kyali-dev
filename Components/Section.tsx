@@ -5,9 +5,8 @@ import {makeStyles} from "@material-ui/core/styles";
 const sectionStyle = makeStyles({
     section: {
         display: 'block',
-        background: 'black',
         height: '80vh',
-        color: 'white',
+        color: 'black',
         padding: '10px',
     },
     section_button: {
@@ -19,7 +18,7 @@ const sectionStyle = makeStyles({
         minHeight: '50px',
     },
     section_content: {
-        background: 'white',
+        background: 'black',
         minWidth: '200px',
         minHeight: '100px',
     },

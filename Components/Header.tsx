@@ -5,14 +5,14 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const headerStyles = makeStyles({
     header: {
+        display: 'sticky',
         textAlign: 'center',
-        position: 'fixed',
         width: '100%',
     },
     button_container: {
         display: 'flex',
         justifyContent: 'left',
-        background: 'red',
+        background: 'white',
     },
     button: {
         padding: '5px',
@@ -21,8 +21,8 @@ const headerStyles = makeStyles({
         display: 'flex',
         justifyContent: 'center',
         padding: '5px',
-        background: 'black',
-        color: 'white',
+        background: 'white',
+        color: 'black',
     },
 });
 
@@ -35,7 +35,7 @@ const Header: FunctionComponent = () => {
             </Box>
             <Box className={classes.button_container}>
                 <Button href="#section-Art" className={classes.button}>
-                    First
+                    Art
                 </Button>
                 <Button href="#section-2"  className={classes.button}>
                     Second
