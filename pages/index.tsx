@@ -8,7 +8,11 @@ import Section from "../Components/Section";
 
 const indexStyle = makeStyles({
     root: {
-        backgroundImage: '/images/background.png'
+//         backgroundImage: `url(${"/images/background.png"})`
+        background: '#efe1d6',
+    },
+    section_grid: {
+        marginTop: '100px',
     }
 });
 
@@ -26,7 +30,7 @@ const Home: NextPage = () => {
     return (
         <Box className={classes.root}>
             <Header/>
-            <Grid>
+            <Grid className={classes.section_grid}>
                 <Section sectionId={"Art"}/>
                 <Section sectionId={"2"}/>
                 <Section sectionId={"3"}/>
